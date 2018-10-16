@@ -13,7 +13,7 @@ router.get('/',(req,res)=>{
 
 
 router.post('/handleInput',(req,res)=>{
-    console.log(req.body);
+    console.log(req.body.parameters);
     res.send(req.body)
 
 })
