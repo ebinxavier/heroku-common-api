@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-let port = process.ENV.PORT || 3000
+let port = process.env.PORT || 3030
 app.listen(port, () => {
     console.log("Listening to port",port);
 })
