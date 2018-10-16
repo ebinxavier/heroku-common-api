@@ -18,5 +18,8 @@
   "homepage": "https://github.com/ebinxavier/heroku-common-api#readme",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "engines": {
+    "node": "10.4.1"
   }
 }
