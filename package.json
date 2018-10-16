@@ -1,0 +1,22 @@
+{
+  "name": "heroku-common-api",
+  "version": "1.0.0",
+  "description": "To serve some rest API end points for all common services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebinxavier/heroku-common-api.git"
+  },
+  "author": "Ebin Xavier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebinxavier/heroku-common-api/issues"
+  },
+  "homepage": "https://github.com/ebinxavier/heroku-common-api#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
