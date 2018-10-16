@@ -1,4 +1,6 @@
 let express = require('express');
+let dialogflow = require('./routes/dialogflow');
+
 let app = express();
 let port = process.env.PORT || 3030
 app.listen(port, () => {
@@ -7,3 +9,6 @@ app.listen(port, () => {
 app.get("/",(req,res)=>{
     res.send("Success");
 })
+
+app.use('/dialogflow',dialogflow);
+
