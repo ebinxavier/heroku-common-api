@@ -10,8 +10,11 @@ router.get('/',(req,res)=>{
     console.log('dialogflow root');
     res.send('Success!!');
 })
-router.get('/getUsers',(req,res)=>{
-    console.log('dialogflow users');
-    res.send('Users are ready...');
+
+
+router.post('/handleInput',(req,res)=>{
+    console.log(req.body);
+    res.send(req.body)
+
 })
 module.exports = router;
