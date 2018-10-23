@@ -47,7 +47,7 @@ router.post('/handleInput', (req, res) => {
                 }
             },
             "telegram": {
-                "text": 
+                "text": responseTg
             },
             "slack": {
                 "text": "This is a text response for Slack."
