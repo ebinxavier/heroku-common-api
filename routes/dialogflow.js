@@ -27,7 +27,13 @@ router.post('/handleInput', (req, res) => {
                         }
                     ]
                 }
-            }
+            },
+            "telegram": {
+                "text": "Hello, telegram!"
+              },
+              "slack": {
+                "text": "This is a text response for Slack."
+              }
         }
     }
     res.send(response);
