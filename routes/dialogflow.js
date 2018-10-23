@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/handleInput', (req, res) => {
-    console.log(req.body.parameters);
+    console.log(req.body.queryResult.parameters);
     let response = {
         "payload": {
             "google": {
