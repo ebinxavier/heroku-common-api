@@ -9,12 +9,13 @@ let port = process.env.PORT || 3030
 
 app.use(cors())
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
     console.log("Listening to port : ",port);
 })
 app.get("/",(req,res)=>{
-    res.send("Success");
+    res.send("It Works...");
 })
 
 app.use('/dialogflow',dialogflow);

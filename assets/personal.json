@@ -1,0 +1,81 @@
+{
+    "votersId": "AFJ0406769",
+    "aadhaar": "877899140480",
+    "pan": "ABZPE9413H",
+    "bank": {
+        "sbi": {
+            "atm": 4231,
+            "ifsc": "SBIN0070781",
+            "netBanking": {
+                "username": "ebinx7",
+                "pswd": "ebin.123456",
+                "pswdProfile": "ebin.54321"
+            }
+        },
+        "corporation": {
+            "atm": 6107
+        },
+        "hdfc": {
+            "id": 66980259,
+            "atm": 4691,
+            "ifsc": "HDFC0002632",
+            "accNo": 50100141873361,
+            "pswd": "Capacitance2@"
+        }
+    },
+    "uan": {
+        "alias": "EPF",
+        "no": 100713951507,
+        "pswd": "#Godislove100"
+    },
+    "education": {
+        "sslc": {
+            "no": 272265,
+            "mark": "9A+ 1A",
+            "percent": "89%"
+        },
+        "plusTwo": {
+            "no": 7147657,
+            "mark": "1031 out of 1200",
+            "percent": "86%"
+        },
+        "bTech": {
+            "no": 12123607,
+            "mark": "5956 out of 8000",
+            "precent": "74.45%",
+            "Sem1_2": "1107/1550",
+            "Sem3": "886/1100",
+            "Sem4": "777/1100",
+            "Sem5": "810/1100",
+            "Sem6": "817/1100",
+            "Sem7": "814/1050",
+            "Sem8": "745/1000"
+        }
+    },
+    "techPswds": [
+        {
+            "heroku": "Capacitance1#"
+        },
+        {
+            "mlab": "capacitance1"
+        },
+        {
+            "way2sms": "8714912137 / capacitance"
+        },
+        {
+            "twillio": "chakkalakkalhouse"
+        },
+        {
+            "github": "Capacitance1!"
+        },
+        {
+            "pluralsight": "ebinx7@gmail.com/capacitance1"
+        },
+        {
+            "IncomeTax": "Capacitance1!"
+        },
+        {
+            "Oracle": "Capacitance1!"
+        }
+    ]
+}
