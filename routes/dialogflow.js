@@ -29,7 +29,12 @@ router.post('/handleInput', (req, res) => {
                 }
             },
             "telegram": {
-                "text": "Hello, telegram!"
+                "text": "Successfully turned "
+                    + req.body.queryResult.parameters.operation
+                    + " the "
+                    + req.body.queryResult.parameters.device
+                    + " in "
+                    + req.body.queryResult.parameters.room
             },
             "slack": {
                 "text": "This is a text response for Slack."
