@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/handleInput', (req, res) => {
-    console.log(req.body);
+    console.log(req.body.parameters);
     let response = {
         "payload": {
             "google": {
@@ -30,10 +30,10 @@ router.post('/handleInput', (req, res) => {
             },
             "telegram": {
                 "text": "Hello, telegram!"
-              },
-              "slack": {
+            },
+            "slack": {
                 "text": "This is a text response for Slack."
-              }
+            }
         }
     }
     res.send(response);
