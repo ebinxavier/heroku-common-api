@@ -14,6 +14,24 @@ router.get('/', (req, res) => {
 
 router.post('/handleInput', (req, res) => {
     console.log(req.body.queryResult.parameters);
+    let requiredFields = "";
+    let responseTg = "Successfully turned "
+        + req.body.queryResult.parameters.operation
+        + " the "
+        + req.body.queryResult.parameters.device
+        + " in "
+        + req.body.queryResult.parameters.room;
+
+    if (!req.body.queryResult.parameters.operation)
+        requiredFields += 'Turn it ON or OFF';
+    if (!req.body.queryResult.parameters.device)
+        requiredFields += 'Which device';
+    if (!req.body.queryResult.parameters.room)
+        requiredFields += 'Which room';
+    if (requiredFields.length)
+        responseTg = "Please specify " + requiredFields.join(',');
+
+
     let response = {
         "payload": {
             "google": {
@@ -29,12 +47,7 @@ router.post('/handleInput', (req, res) => {
                 }
             },
             "telegram": {
-                "text": "Successfully turned "
-                    + req.body.queryResult.parameters.operation
-                    + " the "
-                    + req.body.queryResult.parameters.device
-                    + " in "
-                    + req.body.queryResult.parameters.room
+                "text": 
             },
             "slack": {
                 "text": "This is a text response for Slack."
