@@ -23,10 +23,14 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/send', (req,res)=>{
-    console.log('req', req.query);
     const {from,to,sub,body} = req.query;
-
-    oauth2Client.setCredentials({
+    let parsedToAddress;
+    try{
+      parsedToAddress = JSON.parse(to).join(',')
+    } catch(e){
+      parsedToAddress = to;
+    }
+oauth2Client.setCredentials({
           refresh_token: "1/FuFItnb9PKlUG6ox89dNG8n0euLHp1GQgRQXCkerQFg"
     });
     const accessToken = oauth2Client.getAccessToken();
@@ -44,9 +48,9 @@ router.get('/send', (req,res)=>{
 
     const mailOptions = {
       from: from+" <donotreply@bar.com>",
-      to,
+      to:parsedToAddress,
       subject:sub,
-      text: body
+      html: body
     };
     
     smtpTransport.sendMail(mailOptions, function(error, info){
