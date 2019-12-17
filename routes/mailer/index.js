@@ -1,12 +1,15 @@
 const nodemailer = require('nodemailer');
 const express = require('express');
 const { google } = require("googleapis");
+const bodyParser = require('body-parser');
 
 let router = express.Router();
 
 router.use((req, res, next)=>{
     next();
 });
+
+router.use(bodyParser.json());
 
 const OAuth2 = google.auth.OAuth2;
 
@@ -16,23 +19,18 @@ const oauth2Client = new OAuth2(
   "https://developers.google.com/oauthplayground" // Redirect URL
 );
 
-
-
-router.get('/', (req,res)=>{
-    res.sendFile(__dirname+'/index.html')
-})
-
-router.get('/send', (req,res)=>{
-    const {from,to,sub,body} = req.query;
+const sendMail = (params)=>{
+  return new Promise((resolve,reject)=>{
+    const {from,to,sub,body} = params;
     let parsedToAddress;
     try{
-      parsedToAddress = JSON.parse(to).join(',')
+      parsedToAddress = (typeof to == 'string'? JSON.parse(to): to).join(',')
     } catch(e){
       parsedToAddress = to;
     }
-oauth2Client.setCredentials({
-          refresh_token: "1/FuFItnb9PKlUG6ox89dNG8n0euLHp1GQgRQXCkerQFg"
-    });
+    oauth2Client.setCredentials({
+              refresh_token: "1/FuFItnb9PKlUG6ox89dNG8n0euLHp1GQgRQXCkerQFg"
+        });
     const accessToken = oauth2Client.getAccessToken();
     const smtpTransport = nodemailer.createTransport({
       service: "gmail",
@@ -56,15 +54,26 @@ oauth2Client.setCredentials({
     smtpTransport.sendMail(mailOptions, function(error, info){
         if (error) {
           console.log('Failure: An Error occured'+ error);
-          res.send({status:"failure"});
+          resolve({status:"failure"});
         } else {
           console.log('Success: Email sent: ' + info.response);
-          res.send({status:"success"});
+          resolve({status:"success"});
         }
       });
+  })
+}
 
-    
 
+router.get('/', (req,res)=>{
+    res.sendFile(__dirname+'/index.html')
+})
+
+router.post('/send',async (req,res)=>{
+  res.send(await sendMail(req.body));
+})
+
+router.get('/send', async (req,res)=>{
+  res.send(await sendMail(req.query));
 })
 
 module.exports = router;
