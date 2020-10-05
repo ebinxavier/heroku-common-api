@@ -6,6 +6,7 @@ let dialogflow = require('./routes/dialogflow');
 let personal = require('./routes/personal');
 let mailer = require('./routes/mailer');
 let tg = require('./routes/tg');
+let youtubeClone = require('./routes/youtube-clone');
 
 let app = express();
 let port = process.env.PORT || 3030
@@ -25,6 +26,7 @@ app.use('/dialogflow',dialogflow);
 app.use('/personal',personal);
 app.use('/mailer',mailer);
 app.use('/tg',tg);
+app.use('/youtube-clone',youtubeClone);
 
 
 
