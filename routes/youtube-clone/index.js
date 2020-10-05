@@ -78,13 +78,11 @@ router.get("/search", async (req, res) => {
       .filter((e) => e); // remove null values
     res.send({ status: "success", result });
   } catch (error) {
-    console.log("error", error);
     res.send({ status: "error", error, result: [] });
   }
 });
 
 router.get("/suggestions", async (req, res) => {
-  console.log("req.query.search", req.query.search);
   const raw = await fetch(
     "https://clients1.google.com/complete/search?client=youtube&hl=en&gl=ae&gs_rn=64&gs_ri=youtube&tok=LY3DgHuByoU2kftmJiC5Pw&ds=yt&cp=3&gs_id=1z&q=" +
       req.query.search +
