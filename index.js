@@ -5,7 +5,7 @@ let bodyParser = require("body-parser");
 let dialogflow = require("./routes/dialogflow");
 let personal = require("./routes/personal");
 let mailer = require("./routes/mailer");
-// let tg = require("./routes/tg");
+let tg = require("./routes/tg");
 let youtubeClone = require("./routes/youtube-clone");
 let {
   handleSocketConnectionWhatsapp,
