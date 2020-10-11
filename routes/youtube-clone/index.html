@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Youtube Clone</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+  <h2>Youtube Clone APIs</h2>
+  <div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+          <span>SEARCH SUGGESTIONS </span>
+          <span class="head label label-success">GET</span>
+          <span class="head label label-danger">/suggestions ? search</span>
+        </div>
+      <div class="panel-body">
+          <br/>
+          <table class="table table-condensed">
+                  <tr>
+                    <td>Request</td>
+                    <td>
+                            <span> /<b>youtube-clone/suggestions</b>?<b>search</b>=search-text</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Response</td>
+                    <td>
+                            <span><b>JSON from Youtube</b></span>
+                    </td>
+                  </tr>
+        </table>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+          <span>SEARCH VIDEOS </span>
+          <span class="head label label-success">GET</span>
+          <span class="head label label-danger">/search ? search</span>
+        </div>
+      <div class="panel-body">
+          <br/>
+          <table class="table table-condensed">
+                  <tr>
+                    <td>Request</td>
+                    <td>
+                            <span> /<b>youtube-clone/search</b>?<b>search</b>=search-text</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Response</td>
+                    <td>
+                            <span><b>JSON from Youtube</b></span>
+                    </td>
+                  </tr>
+        </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<style>
+.head{
+    font-size: 15px;
+    margin: 5px;
+
+}
+</style>

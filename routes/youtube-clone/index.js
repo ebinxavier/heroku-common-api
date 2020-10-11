@@ -3,6 +3,10 @@ const express = require('express');
 const router = express.Router();
 const fetch = require("node-fetch");
 
+router.get('/',(req,res)=>{
+  res.sendFile(__dirname+'/index.html');
+})
+
 router.get("/search", async (req, res) => {
   const raw = await fetch(
     "https://www.youtube.com/youtubei/v1/search?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8",
@@ -117,7 +121,7 @@ router.get("/suggestions", async (req, res) => {
   } catch (e) {
     res.send({ status: "error", result: [] });
   }
-  res.send({ status: "success", result, data });
+  res.send({ status: "success", result });
 });
 
 router.get("/continuation", async (req, res) => {
