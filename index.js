@@ -6,6 +6,7 @@ let dialogflow = require("./routes/dialogflow");
 let personal = require("./routes/personal");
 let mailer = require("./routes/mailer");
 let tg = require("./routes/tg");
+let jsChat = require("./routes/tg-js-chat");
 let youtubeClone = require("./routes/youtube-clone");
 let {
   handleSocketConnectionWhatsapp,
@@ -35,5 +36,6 @@ app.use("/dialogflow", dialogflow);
 app.use("/personal", personal);
 app.use("/mailer", mailer);
 app.use("/tg", tg);
+app.use("/js-chat", jsChat);
 app.use("/youtube-clone", youtubeClone);
 app.use("/whatsapp-clone", whatsappClone);
